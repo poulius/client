@@ -15,7 +15,7 @@ func main() {
 		MessageText string
 	}
 
-  var name string
+	var name string
 
 	conn, err := net.Dial("tcp", "localhost:8090")
 	if err != nil {
@@ -23,16 +23,16 @@ func main() {
 		os.Exit(1)
 	}
 
-  for {
-    name = enterName()
-    name = strings.TrimSuffix(name, "\n")
+	for {
+		name = enterName()
+		name = strings.TrimSuffix(name, "\n")
 
-    if name != "" {
-      break
-    } else {
-      fmt.Println("Name cannot be empty")
-    }
-  }
+		if name != "" {
+			break
+		} else {
+			fmt.Println("Name cannot be empty")
+		}
+	}
 
 	msg := &Message{
 		MessageType: "name",
@@ -82,12 +82,12 @@ func main() {
 }
 
 func enterName() string {
-  nameReader := bufio.NewReader(os.Stdin)
-  fmt.Print("Enter your name: ")
-  name, err := nameReader.ReadString('\n')
-  if err != nil {
-    fmt.Println(err)
-  }
+	nameReader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter your name: ")
+	name, err := nameReader.ReadString('\n')
+	if err != nil {
+		fmt.Println(err)
+	}
 
-  return name
+	return name
 }
