@@ -64,7 +64,7 @@ func main() {
 				fmt.Println(err)
 			}
 
-			fmt.Print("\033[1A") // cursor gooes up by 1 line and overwrites current input with message from server
+			fmt.Print("\033[1A") // cursor gooes up by 1 line
 
 			msg = &Message{
 				MessageType: "message",
